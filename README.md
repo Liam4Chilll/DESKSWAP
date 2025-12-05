@@ -167,18 +167,6 @@ Les contributions sont les bienvenues ! N'hésitez pas à soumettre une Pull Req
 
 Ce projet est sous licence MIT - voir le fichier [LICENSE](LICENSE) pour plus de détails.
 
-## 🙏 Remerciements
-
-- Construit avec Flask et amour ❤️
-- Inspiré par le besoin d'accès fichiers simple et sécurisé dans environnements conteneurisés
-- Merci à la communauté open source
-
-## 📞 Support
-
-- **Issues** : [GitHub Issues](https://github.com/liam4chilll/DESKSWAP/issues)
-- **Discussions** : [GitHub Discussions](https://github.com/liam4chilll/DESKSWAP/discussions)
-- **LinkedIn** : [Votre Profil](https://linkedin.com/in/liam4chilll)
-
 ## ⭐ Historique des étoiles
 
 Si vous trouvez Desk Swap utile, pensez à lui donner une étoile sur GitHub !
