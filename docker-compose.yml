@@ -1,22 +1,11 @@
-version: '3.8'
-
 services:
   deskswap:
     build: .
     container_name: deskswap
     ports:
-      - "8080:8080"
+      - "${CONTAINER_PORT:-8080}:8080"
     volumes:
-      # IMPORTANT: Change /path/to/your/directory to your actual directory
-      - /path/to/your/directory:/data:ro
+      - ${HOST_PATH:-/home/user}:/home/user
     restart: unless-stopped
     environment:
       - PYTHONUNBUFFERED=1
-      - ROOT_PATH=/data
-      - FLASK_PORT=8080
-    healthcheck:
-      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 5s
