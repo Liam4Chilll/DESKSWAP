@@ -1,30 +1,19 @@
 FROM python:3.11-alpine
 
-LABEL maintainer="Your Name <your.email@example.com>"
-LABEL description="Desk Swap - Simple File Manager for Docker"
-LABEL version="1.0"
-
-# Install dependencies
-RUN apk add --no-cache \
-    wget \
-    && pip install --no-cache-dir flask gunicorn
-
-# Create app directory
 WORKDIR /app
 
-# Copy application files
+# Installer les dépendances de compilation pour psutil
+RUN apk add --no-cache gcc python3-dev musl-dev linux-headers
+
+# Installer Flask et psutil
+RUN pip install --no-cache-dir flask psutil
+
+# Copier l'application
 COPY app.py .
-COPY templates/ templates/
+COPY templates ./templates
 
-# Create data directory
-RUN mkdir -p /data
-
-# Expose port
+# Exposer le port
 EXPOSE 8080
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD wget --quiet --tries=1 --spider http://localhost:8080 || exit 1
-
-# Run with Gunicorn for production
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "--workers", "2", "--timeout", "120", "app:app"]
+# Lancer l'application
+CMD ["python", "app.py"]
