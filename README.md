@@ -1,4 +1,4 @@
-# 🗂️ Desk Swap v1.0
+# 🗂️ Desk Swap v2.0
 
 **Gestionnaire de fichiers simple, rapide et sécurisé pour environnements Docker**
 
